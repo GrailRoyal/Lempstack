@@ -58,9 +58,7 @@ sudo mysql_secure_installation
 ```
 This installation allows for more security other than the basic scurity that is configured by default with the server , This is a way of beefing up security on of the database
 
-> **📸 Screenshot Opportunity:** Take a screenshot of the terminal showing the successful output of `sudo mysql_secure_installation` or a successful login to the MySQL prompt with `sudo mysql -p`. Name it `mysql-secure.png`.
-
-![MySQL Secure Installation](images/mysql-secure.png)
+![MySQL Secure Installation](https://github.com/GrailRoyal/Lempstack/blob/images/mysql%20login.png)
 
 ### 4. Installing PHP
 PHP was installed to process code and generate dynamic content. The packages `php-fpm` (PHP FastCGI Process Manager) and `php-mysql` (a module for MySQL database communication) were used.
@@ -106,19 +104,8 @@ A test PHP file was created to verify that Nginx could correctly hand off PHP fi
 ```bash
 sudo vim /var/www/projectLEMP/info.php
 ```
-The file contained:
-```php
-<?php
-phpinfo();
-```
-> **⚠️ Important:** This file was removed after testing for security reasons.
 
-**2. Tested in a browser:**
-The URL `http://<Public-IP-Address>/info.php` was accessed.
-
-> **📸 Screenshot Opportunity:** This is a crucial screenshot. Take a clear screenshot of your browser showing the detailed `phpinfo()` page, which confirms PHP is working through Nginx. Name it `phpinfo-page.png`.
-
-![PHP Info Page](images/phpinfo-page.png)
+![PHP Info Page](https://github.com/GrailRoyal/Lempstack/blob/images/php%20info.png)
 
 ### 7. Creating a PHP Application to Interact with MySQL
 A simple PHP script was created to connect to MySQL and fetch data, demonstrating the full stack functionality.
@@ -140,13 +127,15 @@ CREATE TABLE example_database.todo_list (
 );
 INSERT INTO example_database.todo_list (content) VALUES ("My first important item");
 ```
+![Todo List on DB](https://github.com/GrailRoyal/Lempstack/blob/images/mysql%20table%20test.png)
+
+
 
 **3. Created the PHP script `todo_list.php`:**
 The file `/var/www/projectLEMP/todo_list.php` was created to connect to the database and query the `todo_list` table, displaying the results on a web page.
 
-> **📸 Screenshot Opportunity:** The final result! Take a screenshot of your browser showing the output of the `todo_list.php` script, which displays the todo items fetched from the MySQL database. Name it `todo-list-app.png`.
 
-![Todo List Application](images/todo-list-app.png)
+![Todo List Application](https://github.com/GrailRoyal/Lempstack/blob/images/php%20sql%20test.png)
 
 ---
 
@@ -169,17 +158,3 @@ The file `/var/www/projectLEMP/todo_list.php` was created to connect to the data
 
 This project successfully demonstrates a fully functional LEMP stack on Ubuntu, capable of serving static content, processing PHP, and interacting with a MySQL database.
 ```
-
-### Instructions for You:
-
-1.  **Create an `images` folder** in your GitHub repository.
-2.  **Take the four screenshots** mentioned in the `README.md` file (look for the **📸 Screenshot Opportunity** comments).
-3.  **Save the screenshots** with the exact names suggested:
-    *   `nginx-welcome.png`
-    *   `mysql-secure.png`
-    *   `phpinfo-page.png`
-    *   `todo-list-app.png`
-4.  **Upload these four image files** into the `images` folder you created on GitHub.
-5.  **Copy the entire markdown text** from the code block above into a new file in your repository named `README.md`.
-
-Once you push the `README.md` file and the `images` folder to GitHub, it will automatically render the guide with your pictures in the correct places.
