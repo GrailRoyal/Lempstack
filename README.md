@@ -16,7 +16,13 @@ This project documents the setup of a LEMP stack (Linux, Nginx, MySQL, PHP) on a
 
 ### 1. Prerequisites
 *   An AWS EC2 instance running Ubuntu 22.04 LTS.
+*   ![Nginx Welcome Page](https://github.com/GrailRoyal/Lempstack/blob/images/machine%20creation.png)
 *   A security group allowing inbound traffic on SSH (22), HTTP (80), and HTTPS (443).
+
+### Logining into Instance
+`ssh -i path_to_key @ubuntu@ip_adress
+![accessing the machine](https://github.com/GrailRoyal/Lempstack/blob/images/machinelogin.png)
+ 
 
 ### 2. Installing the Nginx Web Server
 Nginx was installed to serve the web pages.
@@ -26,23 +32,22 @@ sudo apt update
 sudo apt install nginx -y
 sudo systemctl status nginx
 ```
-
-**Verification:**
+![nginx status](https://github.com/GrailRoyal/Lempstack/blob/images/nginx%20status.png)
 
 `nginx -v` The command confirms the installation of nginx .
 
 `curl http://localhost:80` This command verifies the server is running locally.
 
 
-> **📸 Screenshot Opportunity:** Take a screenshot of your browser showing the default "Welcome to nginx!" page using your EC2 instance's public IP address. Name it `nginx-welcome.png`.
-
-![Nginx Welcome Page](images/nginx-welcome.png)
+![Nginx Welcome Page](https://github.com/GrailRoyal/Lempstack/blob/images/nginx%20web%20test.png)
 
 ### 3. Installing MySQL
 MySQL was installed to store and manage data for the site.
 
+
 `sudo apt install mysql-server`
 This comand installs the mysql database server into your machine 
+![MySQL Secure Installation](https://github.com/GrailRoyal/Lempstack/blob/images/mysql%20login.png)
 
 `sudo mysql` This command allows us to log into our mysql sever
 
@@ -52,6 +57,7 @@ The MySQL security script was run to secure the installation:
 sudo mysql_secure_installation
 ```
 This installation allows for more security other than the basic scurity that is configured by default with the server , This is a way of beefing up security on of the database
+
 > **📸 Screenshot Opportunity:** Take a screenshot of the terminal showing the successful output of `sudo mysql_secure_installation` or a successful login to the MySQL prompt with `sudo mysql -p`. Name it `mysql-secure.png`.
 
 ![MySQL Secure Installation](images/mysql-secure.png)
